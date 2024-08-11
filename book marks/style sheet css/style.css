@@ -1,0 +1,162 @@
+*{
+    font-family: "PT Sans Caption", sans-serif;
+}
+
+@scope (body) {
+    :scope {
+        padding: 20px 40px;
+        background: #f7ecde;
+    }
+  
+    /* Start Scope Header */
+    @scope (header){
+        :scope {
+            border-bottom: 3px dotted;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Pacifico';
+            font-size: 50px;
+            font-weight: 500;
+            width: fit-content;
+            z-index: 2;
+        }
+
+        h1::before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background: #fec260;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        h1:hover::before {
+            height: 30px;
+        }
+    }
+
+
+    /* Start Scope Form */
+    @scope (.form) {
+        :scope {
+            padding-block: 40px;
+            text-align: center;
+            border-bottom: 3px dotted;
+
+        }
+
+        h2 {
+            font-family: 'Righteous';
+            font-size: 25px;
+            background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+            background-clip: text;
+            color: transparent;
+        }
+
+        :scope :is(.site-name,.site-url){
+            margin-block: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .site-name label::before {
+            content: "\f02d";
+            font-family: 'Font Awesome 6 free';
+            margin-right: 10px;
+        }
+
+        .site-url label::before {
+            content: "\f0c1";
+            font-family: 'Font Awesome 6 free';
+            margin-right: 10px;
+        }
+
+        input {
+            color: #212529;
+            background-color: #fff;
+            border-color: #d99c39;
+            outline: 0;
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 0.25rem #fec2607a !important;
+        }
+
+        .is-valid {
+            position: absolute;
+            top: 56%;
+            right: 10px;
+        }
+
+        .valid:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 128, 0, 0.479) !important;
+        }
+
+        .not-valid:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.452) !important;
+        }
+
+        .valid-icon{
+            color: green;
+        }
+
+        .not-valid-icon{
+            color: red;
+        }
+
+        button {
+            padding: 10px 50px !important;
+            background: #d1512d !important;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: transparent !important;
+            color: red !important;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    }
+
+    /* Start Table Links */
+    @scope(table){
+        :scope {
+            width: 100%;
+            margin-block: 40px;
+            text-align: center;
+            background: #fff;
+    }
+
+        thead th {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        tbody td {
+            padding: 10px;
+            border-top: 1px solid #0003
+        }
+
+        .btn-view {
+            color: #fff;
+            background: #9eb23b;
+        }
+
+        .btn-view:hover {
+            color: #fff;
+            background: #b2c943;
+        }
+    }
+}
+
+
